@@ -1,0 +1,29 @@
+[07-Jan-2018 10:43:55 UTC] PHP Warning:  include(includes/dbh.inc.php): failed to open stream: No such file or directory in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 3
+[07-Jan-2018 10:43:55 UTC] PHP Warning:  include(): Failed opening 'includes/dbh.inc.php' for inclusion (include_path='.:/opt/alt/php71/usr/share/pear') in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 3
+[07-Jan-2018 10:43:55 UTC] PHP Notice:  Undefined index: genreinput in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 8
+[07-Jan-2018 10:43:55 UTC] PHP Notice:  Undefined index: priceinput in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 10
+[07-Jan-2018 10:43:55 UTC] PHP Notice:  Undefined index: ageinput in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 12
+[07-Jan-2018 10:43:55 UTC] PHP Notice:  Undefined variable: conn in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 18
+[07-Jan-2018 10:43:55 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 18
+[22-Jan-2018 23:11:35 UTC] PHP Warning:  include(includes/dbh.inc.php): failed to open stream: No such file or directory in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 3
+[22-Jan-2018 23:11:35 UTC] PHP Warning:  include(): Failed opening 'includes/dbh.inc.php' for inclusion (include_path='.:/opt/alt/php71/usr/share/pear') in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 3
+[22-Jan-2018 23:11:35 UTC] PHP Notice:  Undefined index: genreinput in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 8
+[22-Jan-2018 23:11:35 UTC] PHP Notice:  Undefined index: priceinput in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 10
+[22-Jan-2018 23:11:35 UTC] PHP Notice:  Undefined index: ageinput in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 12
+[22-Jan-2018 23:11:35 UTC] PHP Notice:  Undefined index: moresurvey in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 13
+[22-Jan-2018 23:11:35 UTC] PHP Notice:  Undefined variable: conn in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 18
+[22-Jan-2018 23:11:35 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 18
+[28-Jun-2018 14:03:06 UTC] PHP Warning:  include(includes/dbh.inc.php): failed to open stream: No such file or directory in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 3
+[28-Jun-2018 14:03:06 UTC] PHP Warning:  include(): Failed opening 'includes/dbh.inc.php' for inclusion (include_path='.:/opt/alt/php71/usr/share/pear') in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 3
+[28-Jun-2018 14:03:08 UTC] PHP Notice:  Undefined index: type in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 5
+[28-Jun-2018 14:03:08 UTC] PHP Notice:  Undefined index: typeinput in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 6
+[28-Jun-2018 14:03:08 UTC] PHP Notice:  Undefined index: genre in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 7
+[28-Jun-2018 14:03:08 UTC] PHP Notice:  Undefined index: genreinput in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 8
+[28-Jun-2018 14:03:08 UTC] PHP Notice:  Undefined index: price in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 9
+[28-Jun-2018 14:03:08 UTC] PHP Notice:  Undefined index: priceinput in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 10
+[28-Jun-2018 14:03:08 UTC] PHP Notice:  Undefined index: age in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 11
+[28-Jun-2018 14:03:08 UTC] PHP Notice:  Undefined index: ageinput in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 12
+[28-Jun-2018 14:03:08 UTC] PHP Notice:  Undefined index: moresurvey in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 13
+[28-Jun-2018 14:03:08 UTC] PHP Notice:  Undefined index: moresurveyemail in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 14
+[28-Jun-2018 14:03:08 UTC] PHP Notice:  Undefined variable: conn in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 18
+[28-Jun-2018 14:03:08 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/foundationgaming/public_html/includes/devsurvey.inc.php on line 18

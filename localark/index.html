@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-9204363497020455",
+			enable_page_level_ads: true
+			});
+		</script> -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="The Ark Resource Calculator, AKA Ark Crafting Calculator, is a web application to help ARK: Survival Evolved players calculate and strategize what and how many resources is needed to build or craft certain items. This resource calculator application has all items that requires resources to craft. That includes weapons, armor, building structures, dyes, recipes and quest items.">
+	    <meta name="keywords " content="ARK,Survival,Evolved,resource,calculator,weapons,armor,building,structures,dyes,recipes,quests,items,craft,crafting">
+	    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+	    <title>ARK Resource Calculator</title>
+	    <link rel="stylesheet" type="text/css" href="/js/angular-material/angular-material.min.css">
+	    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="/style/main.css">
+	    <!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76022540-1', 'auto');
+  ga('send', 'pageview');
+
+</script> -->
+	    <script src="/js/jquery/dist/jquery.min.js" type="text/javascript"></script>
+	    <script src="/js/angular/angular.min.js" type="text/javascript"></script>
+	    <script src="/js/angular-animate/angular-animate.min.js" type="text/javascript"></script>
+	    <script src="/js/angular-aria/angular-aria.min.js" type="text/javascript"></script>
+	    <script src="/js/angular-material/angular-material.min.js" type="text/javascript"></script>
+
+	    <script src="/js/app-best.client.js"></script>
+	    <script type="text/javascript">
+	    	$(document).ready(function() {
+	    		$("#link-about").click(function() {
+				    $('html, body').animate({
+				        scrollTop: $("#info-section").offset().top
+				    }, 1000);
+				});
+	    	});
+	    </script>
+	</head>
+
+	<body>
+		<div id="calc-app-wrapper" ng-app="ark_calculator" ng-controller="ArkCtrl as ctrl" layout="column">
+			<div layout="row" layout-align="center center" id="header-wrapper" class="section">
+				<div layout="column">
+					<img id="ark-logo" src="/img/Ark-logo.png" alt="">
+				</div>
+				<div layout="column" id="header-title">
+					<!-- ARK -->RESOURCE CALCULATOR
+					<span id="updated-statement">Updated for PC version 281.110</span>
+				</div>
+				<div id="navigation">
+					<ul>
+						<li><a href="#" title="" id="link-about">About</a></li>
+						<li><a href="#" title="" ng-click="showAdvanced()">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div layout="row" layout-xs="column" layout-align="center">
+				<div layout="column" id="column1">
+					<div id="filter-section" class="section" layout="column">
+						<div flex class="box-header">
+							<div class="box-header-title-container" layout="row">
+								<div flex="33"></div>
+								<div flex="33" layout="row" layout-align="center center">
+									<span flex>filters</span>
+								</div>
+								<div flex="33">
+									<md-button class="md-icon-button toolbar-btn" id="btn-more-filters" ng-click="toggleMoreFilter()">
+							        	<md-icon id="toggle-more-filter" class="material-icons">expand_more</md-icon>
+									</md-button>
+								</div>
+							</div>
+						</div>
+						<div layout="column" id="filter-image-wrapper" >
+							<div layout="row">
+								<div flex="25">
+									<span class="filter-title">Weapons</span>
+									<button md-ink-ripple  class="md-button" ng-click="toggleFilter('weaponFilterOn', $event)">
+										<div class="image-container">
+											<img ng-src="{{getImagePath('Pike', 80)}}" alt="" class="test-image" >
+											<div class="after"></div>
+										</div>
+									</button>
+								</div>
+								<div flex="25">
+									<span class="filter-title">Armor</span>
+									<button md-ink-ripple  class="md-button" ng-click="toggleFilter('armorFilterOn', $event)">
+										<div class="image-container">
+											<img ng-src="{{getImagePath('Flak Chestpiece', 80)}}" alt="" class="test-image" >
+											<div class="after"></div>
+										</div>
+									</button>
+								</div>
+								<div flex="25">
+									<span class="filter-title">Structures</span>
+									<button md-ink-ripple  class="md-button" ng-click="toggleFilter('structureFilterOn', $event)">
+										<div class="image-container">
+											<img ng-src="{{getImagePath('Stone Foundation', 80)}}" alt="" class="test-image" >
+											<div class="after"></div>
+										</div>
+									</button>
+								</div>
+								<div flex="25">
+									<span class="filter-title">Consumables</span>
+									<button md-ink-ripple  class="md-button" ng-click="toggleFilter('consumableFilterOn', $event)">
+										<div class="image-container">
+											<img ng-src="{{getImagePath('Focal Chili', 80)}}" alt="" class="test-image" >
+											<div class="after"></div>
+										</div>
+									</button>
+								</div>
+							</div>
+							<!-- End Row -->
+							<div layout="row">
+								<div flex="25" class="filter" ng-repeat="filter in filters | limitTo : 4 : 0">
+									<span class="filter-title">{{filter.name}}</span>
+									<button md-ink-ripple  class="md-button" ng-click="toggleFilter(filter.filter, $event)">
+										<div class="image-container">
+											<img ng-src="{{getImagePath(filter.img, 80)}}" alt="" class="test-image" >
+											<div class="after"></div>
+										</div>
+									</button>
+								</div>
+							</div>
+							<div layout="row">
+								<div flex="25" class="filter" ng-repeat="filter in filters | limitTo : 4 : 4">
+									<span class="filter-title">{{filter.name}}</span>
+									<button md-ink-ripple  class="md-button" ng-click="toggleFilter(filter.filter, $event)">
+										<div class="image-container">
+											<img ng-src="{{getImagePath(filter.img, 80)}}" alt="" class="test-image" >
+											<div class="after"></div>
+										</div>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="items-section" class="section">
+						<div flex class="box-header">
+							<div class="box-header-title-container" layout="row">
+								<div flex="33"></div>
+								<div flex="33" layout="row" layout-align="center center">
+									<span flex>Items</span>
+								</div>
+								<div flex="33">
+									<md-switch class="toggle" md-no-ink ng-click="toggleListView()"></md-switch>
+								</div>
+							</div>
+						</div>
+						<!-- Item Search Section -->
+						<div id="item-selector-wrapper" layout="column" layout-align="center center">
+							<md-input-container>
+								<label>Search</label>
+								<input ng-model="itemSearch.name">
+						    </md-input-container>
+
+						    <input type="hidden" name="" ng-model="itemSearch.type" value="Resource">
+						    <span class="loading-item">Loading Items...</span>
+							<div id="quick-item-selector" layout="row" layout-align="center center">
+								<div id="quick-item-selector-inner" flex="90" layout="row" layout-align="center center">
+
+									<md-virtual-repeat-container class="vertical-container" ng-show="!listOn">
+										<div ng-repeat="item in getItems() | filter:itemSearch" class="test-image-wrapper md-clickable" >
+											<button md-ink-ripple  class="md-button" ng-click="addLineItem(item)">
+												<img ng-src="{{getImagePath(item.name, 80)}}" alt="" class="test-image" >
+												<md-tooltip md-direction="top" md-delay="100">{{item.displayName}}</md-tooltip>
+											</button>
+										</div>
+									</md-virtual-repeat-container>
+
+									<md-virtual-repeat-container class="vertical-container" ng-show="listOn">
+									 	<!-- <div md-virtual-repeat="item in ctrl.balls" class="repeated-item">
+									 		{{item}}
+									 	</div> -->
+										<div md-ink-ripple md-virtual-repeat="item in getItems() | filter:itemSearch" class="md-clickable list-item-wrapper" layout="row" ng-click="addLineItem(item)">
+											<div class="list-item-img-wrapper" flex="25">
+												<img ng-src="{{getImagePath(item.name, 80)}}" alt="" class="list-item-img" >
+											</div>
+
+											<div class="list-item-name-wrapper" flex="75">
+												<span>{{item.displayName}}</span>
+											</div>
+										</div>
+									</md-virtual-repeat-container>
+
+								</div>
+							</div>
+						</div>
+						<!-- End Item Search Section -->
+					</div>
+					<!-- End item selection section -->
+				</div>
+
+				<div layout="column" id="column2">
+					<div layout="column" id="grand-total-section" class="section">
+						<div flex class="box-header">
+							<div class="box-header-title-container" layout="row">
+								<div flex layout="row" layout-align="center center">
+									<span flex>Total Resources</span>
+								</div>
+							</div>
+						</div>
+						<div flex id="grand-total-wrapper">
+							<div id="total-resource-container">
+								<div ng-repeat="(key, value) in totalResources = getTotalBaseResources()" class="total-individual-resource-container">
+									<img class="img-grand-total-table" ng-src="{{getImagePath(key, 80)}}">
+										<md-tooltip md-direction="top" md-delay="100">{{key}}</md-tooltip>
+									</img>
+									<span class="num-resources">{{getTotalSpecific(key)}}</span>
+								</div>
+							</div>
+
+						</div>
+
+						<div flex id="total-weight-wrapper">
+							Weight: {{getTotalWeight()}}
+						</div>
+					</div>
+					<!-- End resouce grand total section -->
+
+					<div layout="column" id="selected-item-section" class="section">
+						<div class="box-header">
+							<div class="box-header-title-container" layout="row">
+								<div flex layout="row" layout-align="center center">
+									<span flex>Selected Items</span>
+								</div>
+							</div>
+						</div>
+						<div layout="column" layout-align="" class="ng-scope" id="resource-calculator-wrapper">
+							<div id="items-wrapper">
+								<div id="items">
+									<div ng-show="totalResources | isEmpty">
+										Please select an item.
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End selected item section -->
+				</div>
+			</div>
+			<!-- End application wrapper -->
+
+			<div layout="column" layout-align="center center" class="" id="info-section">
+				<div flex>
+					<md-toolbar class="">
+						<div class="md-toolbar-tools">
+							<h2 class="md-flex">About</h2>
+						</div>
+					</md-toolbar>
+					<md-content flex layout-padding>
+						<h3>Ark Resource Calculator</h3>
+						<p>The Ark Resource Calculator is a tool to help Ark: Survival Evolved players calculate the amount of resources needed to craft items selected from the catalog. There are other resource calculators out there before this, but this was created because the other calculators were not up to date or didn't have all craftable items like dyes. All of the information here was gathered from the <a href="http://ark.gamepedia.com/ARK_Survival_Evolved_Wiki" title="Ark: Survival Evolved Gamepedia">Ark: Survival Evolved Gamepedia</a>.</p>
+
+						<h3>Usage</h3>
+						<ol>
+							<li>Select an item from the list on the bottom left panel. It will put that item into the selected item list on the bottom right panel.</li>
+							<li>Selecting that item again will add one more to the amount selected.</li>
+							<li>The amount of the item can be edited manually by clicking on the amount.</li>
+							<li>The selected item can also be changed by clicking on the selected item name, and changing the name.</li>
+							<li>The item list can be shown in two layouts: icon-only or list. Click the toggle button on the item panel to toggle between the two layouts.</li>
+							<li>The top right panel shows the total base resources needed to craft all of the selected items.</li>
+							<li>Selecting a type filter from the top left panel will show items only of the selected type. Multiple filters can be selected.</li>
+							<li>To show more filters, click on the carat on the filter panel.</li>
+						</ol>
+
+						<h3>Contact</h3>
+						<p>If you need to contact me about any bugs, false information, suggestions on improvements, or missing items to be added, or just to be a great person and tell me how awesome this application is, then <a href="#" ng-click="showAdvanced()" title="">click here</a>.</p>
+
+						<p>
+						** Sorry for the late updates! I've been busy with work and school. I have two jobs right now (12/31/2017), so it's quite difficult for me to add any new features.
+						</p>
+					</md-content>
+				</div>
+			</div>
+
+			<div layout="column" layout-align="center center" class="section" id="footer-section">
+				<div flex>
+					Game content and materials are trademarks and copyrights of their respective publisher and its licensors. All rights reserved.
+				</div>
+				<div flex>
+					Any bugs or false information? Please contact me<md-button type="button" class="md-icon-button md-mini" ng-click="showAdvanced()"><md-icon class="material-icons">email</md-icon></md-button>
+				</div>
+				<div flex>
+					&copy; 2016 Akia Vongdara
+				</div>
+			</div>
+			<!-- End Footer section -->
+		</div>
+	</body>
+</html>

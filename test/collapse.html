@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  	$(document).ready(function(){
+			$('.button').click(function(){
+				if($(this).html() == "-"){
+		        $(this).html("+");
+		    }
+		    else{
+		        $(this).html("-");
+		    }
+			$('.collapse').collapse('toggle');
+		});
+	});
+  </script>
+  <style type="text/css">
+  	.sidenav {
+	    height: 100%;
+	    width: 160px;
+	    position: fixed;
+	    z-index: 1;
+	    top: 0;
+	    left: 0;
+	    background-color: #111;
+	    overflow-x: hidden;
+	    padding-top: 20px;
+	}
+  	.sidenav a {
+	    padding: 6px 8px 6px 16px;
+	    text-decoration: none;
+	    font-size: 25px;
+	    color: #818181;
+	    display: block;
+	}
+
+	.sidenav a:hover {
+	    color: #f1f1f1;
+	}
+	.button {
+		width: 100%;
+		text-align: right;
+	}
+	.container {
+		width: 50%;
+		margin: auto;
+	}
+  </style>
+</head>
+<body>
+<div class="body">
+	<div class="sidenav">
+		<a href="index.html">Home</a>
+		<a href="collapse.html">Collapse</a>
+	</div>
+	<div class="container">
+		<button type="button" class="button">+</button>
+		<div class="collapse">
+			A timeless gardening classic by Christopher Lloyd, one of Britain's most highly respected plantsmen, updated for the 21st century. With a new foreword by Anna Pavord.
+			This is a classic work by a gardener who combines a passionate love of his subject with a critical intelligence and a good helping of wit. THE WELL-TEMPERED GARDEN is packed with the sort of information keen gardeners crave - from planting, weeding and the pleasures of propagation to annuals, water lilies and vegetables. Hailed as a masterpiece when it was first published, THE WELL-TEMPERED GARDEN is as fresh, enlightening and necessary for gardeners in the 21st century as it was when it first appeared more than 40 years ago.
+		</div>
+	</div>
+</div>
+</body>
+</html>
