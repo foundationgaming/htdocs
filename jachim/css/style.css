@@ -49,6 +49,44 @@ container .dropdown-item {
     font-size: 1rem;
 }
 
-.intakedata > div, .intakedata > select {
-    margin-top: 50px;
+.basicinfo > div,
+.basicinfo > select,
+.food > div,
+.intakedata > div,
+.outputdata > div{
+    margin-top: 20px;
+}
+
+.basicinfo, .food, .intakedata, .outputdata {
+    border: 2px solid #000000;
+    border-radius: 50px;
+    padding: 50px;
+    margin: 25px;
+}
+
+.input-group-text {width: 130px;}
+
+button[type=submit] {
+    margin: 0 auto;
+}
+
+form > div {
+    text-align: center;
+}
+
+.additionalinfo {
+    margin-bottom: 50px;
+}
+
+.data {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container.return {
+    position: relative;
+    height: 100vh;
 }
