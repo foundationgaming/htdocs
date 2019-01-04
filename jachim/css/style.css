@@ -1,0 +1,54 @@
+*:focus {
+    outline: 0;
+}
+
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 50px;
+    border: 1px solid #000000;border-radius: 50px;
+}
+
+.login p {
+    position: relative;
+}
+
+.login p label {
+    width: 100px;
+}
+
+.login p input {
+    width: 100%;
+    padding: 0 20px;
+    border: 1px solid #000000;
+    text-align: center;
+}
+
+input[type="submit"] {
+    background: inherit;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    height: 50px;
+    width: 100px;
+}
+
+input[type="submit"]:hover {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+container .dropdown-item {
+    color: #FFFFFF;
+}
+
+.dark .dropdown-item {
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+
+.intakedata > div, .intakedata > select {
+    margin-top: 50px;
+}
